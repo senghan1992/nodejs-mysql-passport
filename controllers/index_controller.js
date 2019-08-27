@@ -7,7 +7,7 @@ function login(req, res) {
         // 로그인 성공
         req.logIn(user, function(err){
             if(err) return res,json(err);
-            return res.json({result : true, message : 'congratulation!'});
+            return res.json({result : true}, req.user);
         })
     })(req,res);
     // console.log('index_controller/login method');
