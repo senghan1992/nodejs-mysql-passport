@@ -9,10 +9,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+// login
 router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.post('/login', passport.authenticate('local-login'), index_controller.login);
+// process of login
+router.post('/login', index_controller.login);
 
 module.exports = router;
